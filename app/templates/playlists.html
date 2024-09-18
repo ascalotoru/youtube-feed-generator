@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Listar Playlists</title>
+  </head>
+  <body>
+    <h1>Listado de Playlists</h1>
+    <ul>
+      {% for playlist in playlists %}
+      <li>{{ playlist.nombre }} (ID: {{ playlist.playlist_id }})</li>
+      {% endfor %}
+    </ul>
+    <br />
+    <a href="{{ url_for('main.add_playlist') }}">Agregar nueva Playlist</a>
+  </body>
+</html>

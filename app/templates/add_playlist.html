@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Agregar Playlist</title>
+  </head>
+  <body>
+    <h1>Agregar Playlist</h1>
+    <form method="post">
+      <label for="playlist_id">ID de Playlist:</label>
+      <input type="text" id="playlist_id" name="playlist_id" required />
+      <br />
+      <label for="nombre">Nombre de Playlist:</label>
+      <input type="text" id="nombre" name="nombre" />
+      <br />
+      <input type="submit" value="Agregar Playlist" />
+    </form>
+    <br />
+    <a href="{{ url_for('main.listar_playlists') }}"
+      >Ver Listado de Playlists</a
+    >
+  </body>
+</html>
