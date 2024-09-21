@@ -12,6 +12,7 @@ mutagen = "*"
 flask-sqlalchemy = "*"
 flask-migrate = "*"
 pytz = "*"
+gunicorn = "*"
 
 [dev-packages]
 

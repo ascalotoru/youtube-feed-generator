@@ -1,6 +1,11 @@
 from config import Config
+from werkzeug.utils import secure_filename
 import os
 import yt_dlp
+
+
+def format_filename(title):
+    return secure_filename(title.replace('-', '_'))
 
 
 def descargar_audio(video_url, video_title):
@@ -17,7 +22,7 @@ def descargar_audio(video_url, video_title):
         ydl_opts = {
             'format': 'bestaudio/best',
             # Añade mp3 automaticamente
-            'outtmpl': os.path.join(audio_dir, f'{video_title}'),
+            'outtmpl': os.path.join(audio_dir, f'{format_filename(video_title)}'),
             'postprocessors': [{
                 'key': 'FFmpegExtractAudio',
                 'preferredcodec': 'mp3',
