@@ -11,6 +11,7 @@ yt-dlp = "*"
 mutagen = "*"
 flask-sqlalchemy = "*"
 flask-migrate = "*"
+pytz = "*"
 
 [dev-packages]
 

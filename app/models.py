@@ -22,7 +22,6 @@ class Video(db.Model):
     fecha_publicacion = db.Column(db.DateTime, nullable=False)
     playlist_id = db.Column(db.String(50), db.ForeignKey(
         'playlist.playlist_id'), nullable=False)
-    orden = db.Column(db.Integer, nullable=False)
 
     def __repr__(self):
         return f"<Video {self.titulo}>"

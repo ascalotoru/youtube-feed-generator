@@ -34,6 +34,7 @@ def listar_playlists():
 
 @main.route('/rss/<playlist_id>')
 def generar_rss(playlist_id):
-    videos = Video.query.filter_by(playlist_id=playlist_id).all()
+    videos = Video.query.filter_by(
+        playlist_id=playlist_id).order_by(Video.fecha_publicacion).all()
     feed_xml = generar_feed_rss(videos)
     return feed_xml, 200, {'Content-Type': 'application/xml'}
