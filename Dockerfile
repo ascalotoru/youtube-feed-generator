@@ -1,5 +1,5 @@
 # Usa una imagen base de Python
-FROM python:3.12-slim
+FROM python:3.12-alpine
 
 # Establece el directorio de trabajo
 WORKDIR /app
@@ -16,7 +16,7 @@ RUN pip install pipenv && pipenv install --deploy --ignore-pipfile
 COPY . .
 
 # Expone el puerto
-EXPOSE 5000
+EXPOSE 8000
 
 # Comando para ejecutar la aplicación
 CMD ["pipenv", "run", "gunicorn", "-b", "0.0.0.0:8000", "wsgi:app"]
